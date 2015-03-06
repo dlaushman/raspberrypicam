@@ -1,0 +1,33 @@
+<!doctype html>
+<body>
+<title>Race Cam {{ prc_ipaddr }}</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<link href="{{ url_for('static', filename='video-js.css') }}" rel="stylesheet" type="text/css">
+<table>
+<h1><center>Race Cam <br><font color="white"> Index @ {{ prc_ipaddr }}</font></center></h1>
+</table>
+<br>
+<center>
+<table border=0><tr>
+<td><center><div class=storage>Minutes Available for Recording: <strong> {{ strg_left }}</strong></div><center></td>
+<td><a href="{{ url_for('settings') }}"><img src="/static/gear.png"></a></td>
+</tr></table>
+<script src="video.js"></script>
+<script>
+  videojs.options.flash.swf = "video-js.swf";
+</script>
+<br>
+<table border="1">
+{% for file in files: %}
+<tr><td><video id="{{ file}}" class="video-js vjs-default-skin" controls preload="metadata" width="320" height="180" data-setup="{}"> <source src="/files/{{ file }}" type='video/mp4' /> </video> </td>
+<td><a href="/files/{{ file }}">{{ file }}</a>
+<br><br><br><br>
+   <form action="/" method="post">
+   <input type="hidden" name="vfid" value="{{ file }}">
+   <input type="submit" name="submit" value="REMOVE">
+</td>
+</tr>
+{% endfor %}
+</table>
+</center>
+</body>

@@ -1,0 +1,27 @@
+<title>RaceCam Configuration</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<link href="{{ url_for('static', filename='video-js.css') }}" rel="stylesheet" type="text/css">
+<h1><center>Race Cam<br><font color="white">Configuration</font></center></h1>
+
+<br>
+<a href="{{ url_for('index') }}">Index</a>
+<form action="settings" method="post">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="70%">
+
+<br>
+{% for message in get_flashed_messages() %}
+<font size="+1" color="red">
+  <div class=flash>{{ message }}</div>
+{% endfor %}
+<br>
+
+{% for key, value in items.iteritems(): %}
+<tr><td align="right" height="15px" width="150px">&nbsp;<a>{% if value[3]=="Invalid Value" %}<font color="red">{% else %}<font color="white">{% endif %} {{ key }}</a>&nbsp;</td>
+    <td align="center" valign="center" width="200px">&nbsp;<input class="config2" type="text" name="{{ key }}" value="{{ value[0] }}">&nbsp;</td>
+    <td align="left" width="300px"><font color="lightgrey" size="-1">&nbsp;{{ value[2] }}&nbsp;</font></td></tr>
+{% endfor %}
+
+</table>
+<br><center><input type="submit" name="submit" value="Save Changes">
+</form>
+

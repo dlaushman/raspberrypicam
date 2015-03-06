@@ -1,0 +1,9 @@
+body            { font-family: sans-serif; background: black; }
+a					 { color: #33FF00; }
+h1, h2          { color: white; font-family: Arial, Helvetica, sans-serif; margin: 0; color: #FF0000; font-size-adjust: .6}
+h1              { border-bottom: 8px solid #CC0000; }
+h2              { font-size: 1.2em; }
+.page           { margin: 2em auto; width: 35em; border: 5px solid #585858; padding: 0.8em; background: black; }
+.storage        { margin: 2em auto; width: 35em; border: 5px solid #585858; padding: 0.8em; background: blue; color: white; }
+.config         { margin: 0.4em auto; width: 35em; color: #33FF00 border: 3px solid #585858; background: #282828; padding: 0.2em; color: white; font-size: 12px; }
+.config2        { margin: 0.4em auto; width: 35em; color: #282828 border: 3px solid #585858; background: #282828; padding: 0.2em; color: lightgreen; width: 160px; font-size: 12px; }
