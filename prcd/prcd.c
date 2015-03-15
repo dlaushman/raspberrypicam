@@ -150,8 +150,8 @@ int main(int argc, char * argv[])
    // self sigs are: 1) if max recording time lapses(***DONE***), 2) traqmate line drops
 	if(pifacedigital_open(g.hw_addr)==-1)
 	{
-		syslog(LOG_DEBUG,"Fatal error: Unable to open piface interface.")
-		exit(1);
+		syslog(LOG_DEBUG,"Fatal error: Unable to open piface interface. Please Enable SPI in raspi-config")
+		FatalError();
 	}
 	LedTrix();
 	if(g.wififlag&&(!g.vcautostart))

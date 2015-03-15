@@ -1,0 +1,2 @@
+dstr=`date +%m-%d-%Y-%H%M`
+cat filelist | xargs tar cvf piracecam-${dstr}.tar --exclude=*.mp4

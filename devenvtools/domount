@@ -1,0 +1,1 @@
+mount //192.168.2.2/laushman -o username=laushman /mnt
